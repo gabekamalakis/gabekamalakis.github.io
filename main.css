@@ -1,0 +1,100 @@
+:root {
+	/* All these color schemes come from Adobe's color themes */
+	--accent2:  #D91424;
+	--accent1:  #961822;
+	--main-fg:  #094F51;
+	--main-bg:  #162A28;
+	--shadow:   #0A0A0D;
+
+	--tonka1:   #F29F05;
+	--tonka2:   #F28705;
+	--tonka3:   #F25C05;
+	--tonka4:   #5A5962;
+	--tonka5:   #FFFFFF;
+
+	--reddish1: #330136;
+	--reddish2: #5F1644;
+	--reddish3: #972D42;
+	--reddish4: #C9463C;
+	--reddish5: #FF6035;
+
+	 --coffee1: #F2E4C9;
+	 --coffee2: #BF7C41;
+	 --coffee3: #A65A2E;
+	 --coffee4: #592C1C;
+	 --coffee5: #0D0D0D;
+}
+
+
+html {
+	/* background-image:linear-gradient(to bottom, var(--accent2), var(--accent1)); */
+	background-color:var(--coffee2);
+	height: 100%;
+}
+body{
+	margin:0;
+	padding:0;
+}
+
+/* @media screen and (max-width: 1000px) { */
+
+.header {
+	color:var(--coffee1);
+	background-color:var(--coffee4);
+	display: flex;
+	font-family:'Oxanium';
+	flex-flow: row wrap;
+	align-items:center;
+	justify-content: space-around;
+	box-shadow: 0px 5px 15px var(--coffee5);
+}
+.wrapper {
+	display:flex;
+	/* background-color: var(--fg2); */
+	flex-flow: column wrap;
+	align-items: center;
+}
+.content {
+	display:flex;
+	flex-flow:row wrap;
+	margin:20px;
+	max-width: 960px;
+	/* align-items:center; */
+}
+.profile,.roles {
+	color:var(--coffee3);
+	/* background-color: var(--coffee2); */
+
+}
+.profile {
+	display: flex;
+	width:200px;
+	flex-flow: row wrap;
+	/* max-width: 175px; */
+	/* min-width: 175px; */
+	padding: 15px;
+	align-items:center;
+	justify-content: space-around;
+}
+.profile img {
+	/* max-width: 175px; */
+	width:inherit;
+	height:auto;
+	box-shadow: 5px 5px 15px var(--coffee5);
+}
+.profile p {
+	background-color: var(--coffee1);
+	width:inherit;
+	padding:15px;
+	box-shadow: 5px 5px 15px var(--coffee5);
+	/* max-width: 175px; */
+}
+
+.roles {
+	/* max-width:755px; */
+	padding:15px;
+	background-color: var(--coffee1);
+	box-shadow: 5px 5px 15px var(--coffee5);
+}
+
+

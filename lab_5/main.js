@@ -258,26 +258,38 @@ function getRandomInt(min, max) {
  	return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
 }
 
+// MDN Sorting numbers help
+function compareNumbers(a, b) {
+	return a - b;
+}
 // Gabe's original pasta al dente
 function listOfIndexes() {
 	console.log('listOfIndexes works');
 	let numberlist = [];
 	for (let i = 0; i < 25; i++) {
-		let index = getRandomInt(0, countries.length - 1);
+		/* Curious thing happened here. Using let instead of var actually broke
+			the loop and triggered it to be infinite. Variables defined
+			using let are scoped by the block so I couldn't use it in this
+			while loop since the index variable wasn't being overwritten in
+			a place that the condition could read it. Var fixes this since
+			var is function scoped and could be actually be accessed
+		*/
+		var index = getRandomInt(0, countries.length - 1);
 		while (numberlist.includes(index) === true) {
-			let index = getRandomInt(0, countries.length - 1);
+			var index = getRandomInt(0, countries.length - 1);
 		}
 		numberlist.push(index);
 	};
-	return numberlist;
+	// Sorting alphabetically
+	let sortedlist = numberlist.sort(compareNumbers);
+	console.log(sortedlist);
+	return sortedlist;
 }
 
 function listelementcreator(country, code, fatherfigure) {
 	let item = document.createElement("li");
-	// boldcode.innerHTML = code;
-	// item.appendChild(boldcode);
 	item.className = "country";
-	item.innerHTML = country;
+	item.innerHTML = " " + country;
 	fatherfigure.appendChild(item);
 	item.insertAdjacentHTML( 'afterbegin', code.bold());
 }
@@ -299,7 +311,7 @@ function testfunc() {
 	};
 
 	// does this thing turn on?
-	console.log('testing events');
+	// console.log(indexes);
 
 }
 

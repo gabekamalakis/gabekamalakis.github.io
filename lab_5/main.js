@@ -272,12 +272,11 @@ function listOfIndexes() {
 	return numberlist;
 }
 
-// This needs to be changed. Each list element has to have it's content rewritten
-// instead of just deleting them and starting over
 function listelementcreator(country, code, fatherfigure) {
 	let item = document.createElement("li");
 	// boldcode.innerHTML = code;
 	// item.appendChild(boldcode);
+	item.className = "country";
 	item.innerHTML = country;
 	fatherfigure.appendChild(item);
 	item.insertAdjacentHTML( 'afterbegin', code.bold());
@@ -287,22 +286,24 @@ function listelementcreator(country, code, fatherfigure) {
 function testfunc() {
 
 	// from MDN
-	// while (orderedlist.firstChild) {
-	// 	orderedlist.removeChild(orderedlist.firstChild);
-	// }
-	// for (let i = 0; i < 25; i++) {
-	// 	listelementcreator(countries[i]['name'], countries[i]['code'], orderedlist);
-	// };
-	// console.log('testing events');
-	listOfIndexes()
+	// Wipes all elements in content if any exist
+	while (orderedlist.firstChild) {
+		orderedlist.removeChild(orderedlist.firstChild);
+	}
+
+	// Creates list of countries
+	let indexes = listOfIndexes()
+	for (let i = 0; i < indexes.length; i++) {
+		let ind = indexes[i];
+		listelementcreator(countries[ind]['name'], countries[ind]['code'], orderedlist);
+	};
+
+	// does this thing turn on?
+	console.log('testing events');
 
 }
-// make sure to use an event listener
 
 const button = document.querySelector('.activate');
 button.addEventListener("click", testfunc);
 
 console.log("List of countries in the world", countries);
-
-
-

@@ -247,33 +247,55 @@ const countries = [
 
 const content = document.querySelector('.content');
 
-var orderedlist = document.createElement('ol');
+let orderedlist = document.createElement('ol');
 content.appendChild(orderedlist);
+
+// From MDN (literally copy-pasted)
+function getRandomInt(min, max) {
+	console.log('getRandomInt works')
+  	min = Math.ceil(min);
+ 	max = Math.floor(max);
+ 	return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+}
+
+// Gabe's original pasta al dente
+function listOfIndexes() {
+	console.log('listOfIndexes works');
+	let numberlist = [];
+	for (let i = 0; i < 25; i++) {
+		let index = getRandomInt(0, countries.length - 1);
+		while (numberlist.includes(index) === true) {
+			let index = getRandomInt(0, countries.length - 1);
+		}
+		numberlist.push(index);
+	};
+	return numberlist;
+}
 
 // This needs to be changed. Each list element has to have it's content rewritten
 // instead of just deleting them and starting over
 function listelementcreator(country, code, fatherfigure) {
-	var item = document.createElement("li");
-	var boldcode = document.createElement("strong");
-	boldcode.innerHTML = code;
+	let item = document.createElement("li");
+	// boldcode.innerHTML = code;
 	// item.appendChild(boldcode);
 	item.innerHTML = country;
 	fatherfigure.appendChild(item);
-	item.insertAdjacentHTML( 'afterbegin', boldcode);
+	item.insertAdjacentHTML( 'afterbegin', code.bold());
 }
 
 // testing the event listener
 function testfunc() {
 
 	// from MDN
-	while (orderedlist.firstChild) {
-		orderedlist.removeChild(orderedlist.firstChild);
-	}
-
-	for (let i = 0; i < 25; i++) {
-		listelementcreator(countries[i]['name'], countries[i]['code'], orderedlist);
-	};
+	// while (orderedlist.firstChild) {
+	// 	orderedlist.removeChild(orderedlist.firstChild);
+	// }
+	// for (let i = 0; i < 25; i++) {
+	// 	listelementcreator(countries[i]['name'], countries[i]['code'], orderedlist);
+	// };
 	// console.log('testing events');
+	listOfIndexes()
+
 }
 // make sure to use an event listener
 
@@ -281,4 +303,6 @@ const button = document.querySelector('.activate');
 button.addEventListener("click", testfunc);
 
 console.log("List of countries in the world", countries);
+
+
 

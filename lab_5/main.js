@@ -250,6 +250,8 @@ const content = document.querySelector('.content');
 var orderedlist = document.createElement('ol');
 content.appendChild(orderedlist);
 
+// This needs to be changed. Each list element has to have it's content rewritten
+// instead of just deleting them and starting over
 function listelementcreator(country, code, fatherfigure) {
 	var item = document.createElement("li");
 	var boldcode = document.createElement("strong");

@@ -309,7 +309,7 @@ function testfunc() {
 		listelementcreator(countries[ind]['name'], countries[ind]['code'], orderedlist);
 	};
 	for (let i = 0; i < countries.length; i++) {
-		if (inindexes.includes(i) === false) {
+		if (indexes.includes(i) === false) {
 			console.log(countries[i]);
 		}
 	}

@@ -294,7 +294,6 @@ function listelementcreator(country, code, fatherfigure) {
 	item.insertAdjacentHTML( 'afterbegin', code.bold());
 }
 
-// testing the event listener
 function testfunc() {
 
 	// from MDN
@@ -309,9 +308,6 @@ function testfunc() {
 		let ind = indexes[i];
 		listelementcreator(countries[ind]['name'], countries[ind]['code'], orderedlist);
 	};
-
-	// does this thing turn on?
-	// console.log(indexes);
 
 }
 

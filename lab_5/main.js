@@ -308,10 +308,13 @@ function testfunc() {
 		let ind = indexes[i];
 		listelementcreator(countries[ind]['name'], countries[ind]['code'], orderedlist);
 	};
+	for (let i = 0; i < countries.length; i++) {
+		if (inindexes.includes(i) === false) {
+			console.log(countries[i]);
+		}
+	}
 
 }
 
 const button = document.querySelector('.activate');
 button.addEventListener("click", testfunc);
-
-console.log("List of countries in the world", countries);

@@ -24,6 +24,7 @@ h3 {
   position: absolute;
   right: 0;
   left: 0;
+  /* height: 600px; */
   display: flex;
   align-items: flex-start;
   font-family: Helvetica, Geneva, Tahoma, sans-serif;
@@ -68,9 +69,11 @@ h3 {
 .content {
   background: #fff;
   border: 2px dotted #444;
-  align-self: flex-start;
+  align-self: center;
+  /* height: 600px; */
   width: 85%;
-  height: 500px;
+  flex-direction: row;
+  justify-content: flex-end;
   padding: 10px;
   overflow-wrap: break-word;
   margin: 25px 50px;

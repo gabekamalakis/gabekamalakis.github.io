@@ -70,6 +70,7 @@ h3 {
   border: 2px dotted #444;
   align-self: flex-start;
   width: 85%;
+  height: 500px;
   padding: 10px;
   overflow-wrap: break-word;
   margin: 25px 50px;

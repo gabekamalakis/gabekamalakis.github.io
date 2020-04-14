@@ -46,7 +46,7 @@ function fetcher() {
 
 
 
-			});
+		});
 }
 
 function chartMaker(fooddata) {

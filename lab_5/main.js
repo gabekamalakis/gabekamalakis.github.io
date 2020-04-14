@@ -275,6 +275,7 @@ function listOfIndexes() {
 			var is function scoped and could be actually be accessed
 		*/
 		var index = getRandomInt(0, countries.length - 1);
+		// While loops are bad, try to use an if/else statement
 		while (numberlist.includes(index) === true) {
 			var index = getRandomInt(0, countries.length - 1);
 		}
@@ -298,6 +299,7 @@ function testfunc() {
 
 	// from MDN
 	// Wipes all elements in content if any exist
+	// While loops are bad. there must be a way of using an if/else or a for loop
 	while (orderedlist.firstChild) {
 		orderedlist.removeChild(orderedlist.firstChild);
 	}
